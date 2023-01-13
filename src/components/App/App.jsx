@@ -2,6 +2,8 @@ import {useEffect, useState} from 'react';
 import React from 'react';
 import './App.css';
 import Axios from 'axios';
+import Header from '../Header/Header';
+import GalleryList from '../GalleryList/GalleryList';
 
 function App() {
   let [galleryItems, setGalleryItems] = useState([]);
@@ -25,11 +27,8 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <h1 className="App-title">Gallery of My Life</h1>
-      </header>
-      <p>Gallery goes here</p>
-      <img src="images/goat_small.jpg"/>
+      <Header />
+      <GalleryList galleryItems={galleryItems}/>
     </div>
   );
 }
