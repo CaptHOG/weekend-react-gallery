@@ -3,10 +3,16 @@ import {useState} from 'react';
 
 function GalleryItem({item}) {
   const [showDescription, setShowDescription] = useState(false);
+  const [likeCounter, setLikeCounter] = useState(0);
 
-  // click handle
+  // image/description click handle
   const toggleshowDescription = () => {
     setShowDescription(!showDescription);
+  }
+
+  // like button handler
+  const clickLikeButton = () => {
+    setLikeCounter(likeCounter + 1);
   }
 
   if (showDescription) {
@@ -16,8 +22,8 @@ function GalleryItem({item}) {
           <div className='descriptionDiv'>
             <p>{item.description}</p>
           </div>
-          <p>Likes: 0</p>
-          <button>Like</button>
+          <p>Likes: {likeCounter}</p>
+          <button onClick={clickLikeButton}>Like</button>
         </div>
       </>
     )
@@ -26,8 +32,8 @@ function GalleryItem({item}) {
       <>
         <div className='animalCard'>
           <img src={item.path} key={item.id} onClick={toggleshowDescription}/>
-          <p>Likes: 0</p>
-          <button>Like</button>
+          <p>Likes: {likeCounter}</p>
+          <button onClick={clickLikeButton}>Like</button>
         </div>
       </>
     )
