@@ -3,18 +3,19 @@
 }
 
 .animalCard {
-  border: 1px solid black;
-  height: 300px;
+  display: inline-block;
   margin: 5px;
-  width: 300px;
+}
+
+.descriptionDiv {
+  border: 1px solid black;
+  height: 200px;
+  padding: 5px;
+  width: 200px;
 }
 
 img {
   border: 1px solid black;
-  height: 300px;
-  width: 300px;
-}
-
-.main {
-  display: inline-flex;
+  height: 200px;
+  width: 200px;
 }

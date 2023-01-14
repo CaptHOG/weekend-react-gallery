@@ -30,7 +30,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <p>Animals</p>
+      <p>Click an image to view description</p>
       <GalleryList galleryItems={galleryItems} />
     </div>
   );

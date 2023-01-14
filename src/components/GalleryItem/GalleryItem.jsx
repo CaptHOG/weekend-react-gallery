@@ -12,24 +12,22 @@ function GalleryItem({item}) {
   if (showDescription) {
     return (
       <>
-        <div>
-          <button>Like</button>
-          <p>Likes: 0</p>
-        </div>
         <div className='animalCard' onClick={toggleshowDescription}>
-          <p>{item.description}</p>
+          <div className='descriptionDiv'>
+            <p>{item.description}</p>
+          </div>
+          <p>Likes: 0</p>
+          <button>Like</button>
         </div>
       </>
     )
   } else {
     return (
       <>
-        <div className='animalCard' onClick={toggleshowDescription}>
-          <div>
-            <img src={item.path} key={item.id}/>
-            <button>Like</button>
-            <p>Likes: 0</p>
-          </div>
+        <div className='animalCard'>
+          <img src={item.path} key={item.id} onClick={toggleshowDescription}/>
+          <p>Likes: 0</p>
+          <button>Like</button>
         </div>
       </>
     )
