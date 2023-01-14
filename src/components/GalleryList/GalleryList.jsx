@@ -1,11 +1,11 @@
 function GalleryList({galleryItems}) {
-  console.log(galleryItems);
+  console.log(galleryItems); // why is this undefined?
   return (
-    <>
-      <h2>Gallery goes here</h2>
-      <div>
-      </div>
-    </>
+    <section>
+      {galleryItems.map(item => (
+        <img src={item.path} key={item.id}/>
+      ))}
+    </section>
   )
 }
 

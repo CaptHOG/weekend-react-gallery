@@ -15,6 +15,8 @@ function App() {
 
   // GET
   const getItems = () => {
+    console.log('getItems');
+
     Axios.get('/gallery')
       .then(response => {
         console.log(response.data);
@@ -28,7 +30,8 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <GalleryList galleryItems={galleryItems}/>
+      <p>Gallery goes here</p>
+      <GalleryList galleryItems={galleryItems} />
     </div>
   );
 }
