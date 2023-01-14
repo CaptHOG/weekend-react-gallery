@@ -2,8 +2,18 @@
   text-align: center;
 }
 
+.animalCard {
+  border: 1px solid black;
+  height: 200px;
+  width: 200px;
+}
+
 img {
   border: 1px solid black;
   height: 200px;
   width: 200px;
+}
+
+.main {
+  display: inline-flex;
 }

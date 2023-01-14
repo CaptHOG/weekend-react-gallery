@@ -1,9 +1,9 @@
 import GalleryItem from "../GalleryItem/GalleryItem";
 
-function GalleryList({galleryItems}) {
-  console.log(galleryItems); // why is this undefined?
+function GalleryList({galleryItems}) { // props
+  console.log(galleryItems); // props.galleryItems
   return (
-    <section>
+    <section className="main">
       {galleryItems.map(item => (
         <GalleryItem item={item} key={item.id}/>
       ))}
