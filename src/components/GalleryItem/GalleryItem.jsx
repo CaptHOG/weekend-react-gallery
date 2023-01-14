@@ -2,7 +2,6 @@ import {useState} from 'react';
 
 
 function GalleryItem({item}) {
-  console.log(item);
   const [showDescription, setShowDescription] = useState(false);
 
   // click handle
@@ -12,18 +11,29 @@ function GalleryItem({item}) {
 
   if (showDescription) {
     return (
-      <div className='animalCard' onClick={toggleshowDescription}>
-        <p>{item.description}</p>
-      </div>
+      <>
+        <div>
+          <button>Like</button>
+          <p>Likes: 0</p>
+        </div>
+        <div className='animalCard' onClick={toggleshowDescription}>
+          <p>{item.description}</p>
+        </div>
+      </>
     )
   } else {
     return (
-      <div className='animalCard' onClick={toggleshowDescription}>
-        <img src={item.path} key={item.id}/>
-      </div>
+      <>
+        <div className='animalCard' onClick={toggleshowDescription}>
+          <div>
+            <img src={item.path} key={item.id}/>
+            <button>Like</button>
+            <p>Likes: 0</p>
+          </div>
+        </div>
+      </>
     )
   }
-  
 }
 
 
