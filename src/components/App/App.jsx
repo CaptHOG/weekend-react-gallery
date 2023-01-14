@@ -2,8 +2,9 @@ import {useEffect, useState} from 'react';
 import React from 'react';
 import './App.css';
 import Axios from 'axios';
-import Header from '../Header/Header';
-import GalleryList from '../GalleryList/GalleryList';
+import Header from '../Header';
+import GalleryList from '../GalleryList';
+
 
 function App() {
   let [galleryItems, setGalleryItems] = useState([]);
@@ -19,7 +20,6 @@ function App() {
 
     Axios.get('/gallery')
       .then(response => {
-        console.log(response.data);
         setGalleryItems(response.data);
       })
       .catch(error => {
@@ -31,9 +31,10 @@ function App() {
     <div className="App">
       <Header />
       <p>Click an image to view description</p>
-      <GalleryList galleryItems={galleryItems} />
+      <GalleryList galleryItems={galleryItems} getItems={getItems}/>
     </div>
   );
 }
+
 
 export default App;
